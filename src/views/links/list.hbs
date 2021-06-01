@@ -3,8 +3,8 @@
 
         {{#each links}}
 
-        <div class="col-md-3 pt-4">
-            <div class="card text-center">
+        <div class="col-md-3 pt-4 mx-auto">
+            <div class="card text-center animate__animated animate__flipInX">
                 <div class="card-body">
                     <a href="{{url}}" target="_blank">
                         <h3 class="card-title text-uppercase">
@@ -13,11 +13,21 @@
                     </a>
                     <p class="pt-3">{{descripcion}}</p>
                     <p class="pt-3"> {{timeago created_at}} </p>
-                    <a href=""><button class="btn btn-warning">Modificar</button></a>
-                    <a href=""><button class="btn btn-danger">Eliminar</button></a>
+                    <a href="/links/edit/{{id}}"><button class="btn btn-warning mt-3">Modificar</button></a>
+                    <a href="/links/delete/{{id}}"><button class="btn btn-danger mt-3">Eliminar</button></a>
                 </div>
             </div>
         </div>
+
+        {{else}}
+            
+            <div class="col-md-4 mx-auto animate__animated animate__backInDown">
+                <div class="card card-body text-center">
+                    <H3>No hay links creados aun</H3>
+                    <h5>¡Crea uno!</h5>
+                   <a href="/links/add" class="pt-3 d-grid gap-2"><button class="btn btn-primary btn-success">Crear</button></a> 
+                </div>
+            </div>
 
         {{/each}}
 
