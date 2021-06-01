@@ -1,0 +1,25 @@
+<div class="container px-4 py-4">
+    <div class="row">
+
+        {{#each links}}
+
+        <div class="col-md-3 pt-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <a href="{{url}}" target="_blank">
+                        <h3 class="card-title text-uppercase">
+                        {{ title }}
+                        </h3>
+                    </a>
+                    <p class="pt-3">{{descripcion}}</p>
+                    <p class="pt-3"> {{timeago created_at}} </p>
+                    <a href=""><button class="btn btn-warning">Modificar</button></a>
+                    <a href=""><button class="btn btn-danger">Eliminar</button></a>
+                </div>
+            </div>
+        </div>
+
+        {{/each}}
+
+    </div>
+</div>
